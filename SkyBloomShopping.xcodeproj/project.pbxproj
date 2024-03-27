@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		243249EC2BB27CDE006EAF01 /* SkyBloomShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243249EB2BB27CDE006EAF01 /* SkyBloomShoppingApp.swift */; };
-		243249EE2BB27CDE006EAF01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243249ED2BB27CDE006EAF01 /* ContentView.swift */; };
+		24163AA22BB3267000201F85 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 24163AA12BB3267000201F85 /* PartialSheet */; };
 		243249F02BB27CDF006EAF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243249EF2BB27CDF006EAF01 /* Assets.xcassets */; };
 		243249F32BB27CDF006EAF01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243249F22BB27CDF006EAF01 /* Preview Assets.xcassets */; };
 		243249FD2BB27CDF006EAF01 /* SkyBloomShoppingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243249FC2BB27CDF006EAF01 /* SkyBloomShoppingTests.swift */; };
@@ -73,9 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24163AA32BB32ED100201F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		243249E82BB27CDE006EAF01 /* SkyBloomShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyBloomShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		243249EB2BB27CDE006EAF01 /* SkyBloomShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyBloomShoppingApp.swift; sourceTree = "<group>"; };
-		243249ED2BB27CDE006EAF01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		243249EF2BB27CDF006EAF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		243249F22BB27CDF006EAF01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		243249F82BB27CDF006EAF01 /* SkyBloomShoppingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyBloomShoppingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24163AA22BB3267000201F85 /* PartialSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +148,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24163AA02BB3267000201F85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		243249DF2BB27CDE006EAF01 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +162,7 @@
 				243249FB2BB27CDF006EAF01 /* SkyBloomShoppingTests */,
 				24324A052BB27CDF006EAF01 /* SkyBloomShoppingUITests */,
 				243249E92BB27CDE006EAF01 /* Products */,
+				24163AA02BB3267000201F85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,12 +179,11 @@
 		243249EA2BB27CDE006EAF01 /* SkyBloomShopping */ = {
 			isa = PBXGroup;
 			children = (
+				24163AA32BB32ED100201F85 /* Info.plist */,
 				24324A5A2BB2903A006EAF01 /* SupportingViews */,
 				24324A4F2BB28E99006EAF01 /* Extension */,
 				24324A292BB28171006EAF01 /* Views */,
 				24324A152BB27E3E006EAF01 /* Model */,
-				243249EB2BB27CDE006EAF01 /* SkyBloomShoppingApp.swift */,
-				243249ED2BB27CDE006EAF01 /* ContentView.swift */,
 				243249EF2BB27CDF006EAF01 /* Assets.xcassets */,
 				243249F12BB27CDF006EAF01 /* Preview Content */,
 				24324A842BB2A019006EAF01 /* AppDelegate.swift */,
@@ -428,6 +434,9 @@
 			dependencies = (
 			);
 			name = SkyBloomShopping;
+			packageProductDependencies = (
+				24163AA12BB3267000201F85 /* PartialSheet */,
+			);
 			productName = SkyBloomShopping;
 			productReference = 243249E82BB27CDE006EAF01 /* SkyBloomShopping.app */;
 			productType = "com.apple.product-type.application";
@@ -500,6 +509,9 @@
 				Base,
 			);
 			mainGroup = 243249DF2BB27CDE006EAF01;
+			packageReferences = (
+				243AAA7E2BB2E1C1002F3471 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+			);
 			productRefGroup = 243249E92BB27CDE006EAF01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -571,8 +583,6 @@
 				24324A192BB27F3A006EAF01 /* BagModel.swift in Sources */,
 				24324A452BB28BBF006EAF01 /* SuccessView.swift in Sources */,
 				24324A172BB27E94006EAF01 /* ClothModel.swift in Sources */,
-				243249EE2BB27CDE006EAF01 /* ContentView.swift in Sources */,
-				243249EC2BB27CDE006EAF01 /* SkyBloomShoppingApp.swift in Sources */,
 				24324A552BB28F23006EAF01 /* Color+Extension.swift in Sources */,
 				24324A4C2BB28CDD006EAF01 /* ProfileView.swift in Sources */,
 				24324A6B2BB293CC006EAF01 /* PagingView.swift in Sources */,
@@ -748,7 +758,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SkyBloomShopping/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = SkyBloomShopping/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -776,7 +786,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SkyBloomShopping/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = SkyBloomShopping/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -906,6 +916,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		243AAA7E2BB2E1C1002F3471 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24163AA12BB3267000201F85 /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 243AAA7E2BB2E1C1002F3471 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 243249E02BB27CDE006EAF01 /* Project object */;
 }

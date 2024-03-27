@@ -77,7 +77,7 @@ struct ShopView: View {
             .navigationBarBackButtonHidden(true)
         }
             
-        .partialSheet(presented: $isModalPresented) {
+        .partialSheet(isPresented: $isModalPresented) {
             VStack {
                 Text("Sort By")
                     .font(.headline)
