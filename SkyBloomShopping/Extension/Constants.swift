@@ -15,9 +15,9 @@ struct Constants {
         static let secondaryBlack = Color.init(hex: "464B5F")
         static let lightGrayColor = Color.init(hex: "F9F9F9")
         static let primaryRed = Color.init(hex: "CB2D3E")
-        static let secondaryRed = Color.init(hex: "EF473A")
-        static let gradientRedHorizontal = LinearGradient(gradient: Gradient(colors: [Color.init(hex: "CB2D3E"), Color.init(hex: "EF473A")]), startPoint: .leading, endPoint: .trailing)
-        static let gradientRedVertical = LinearGradient(gradient: Gradient(colors: [Color.init(hex: "CB2D3E"), Color.init(hex: "EF473A")]), startPoint: .bottom, endPoint: .top)
+        static let secondaryRed = Color.init(hex: "6A1B9A")
+        static let gradientRedHorizontal = LinearGradient(gradient: Gradient(colors: [Color.init(hex: "6A1B9A"), Color.init(hex: "6A1B9A")]), startPoint: .leading, endPoint: .trailing)
+        static let gradientRedVertical = LinearGradient(gradient: Gradient(colors: [Color.init(hex: "6A1B9A"), Color.init(hex: "EF473A")]), startPoint: .bottom, endPoint: .top)
         static let shadowColor = Color.init(hex: "dddddd")
         static let lightGreen = Color.init(hex: "e8fbe8")
     }

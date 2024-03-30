@@ -50,7 +50,15 @@ struct ProfileView: View {
                 ScrollView(.vertical, showsIndicators: false, content: {
                     VStack(spacing: 10) {
                         ForEach(self.arrProfile, id: \.id) { profile in
-                            ProfileRow(profile: profile)
+                            if profile.title == "My Orders" {
+                                ProfileRow(profile: profile)
+                                    .onTapGesture {
+                                        self.selection = 1
+                                    }
+                                    .background(NavigationLink("", destination: MyOrdersView(), tag: 1, selection: $selection))
+                            } else {
+                                ProfileRow(profile: profile)
+                            }
                         }
                     }
                     .padding(.horizontal, 15)

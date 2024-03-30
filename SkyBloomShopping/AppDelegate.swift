@@ -4,7 +4,9 @@
 //
 //  Created by Ashani Dilanka on 2024-03-26.
 //
-
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 import UIKit
 
 @UIApplicationMain
@@ -18,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)

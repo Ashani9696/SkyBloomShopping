@@ -10,7 +10,8 @@ import SwiftUI
 struct BagView: View {
     
     let arrCloth = BagModel.all()
-    @State var isShowPromoCodeView : Bool = false
+    @State var isShowPromoCodeView: Bool = false
+    @State var isCheckoutViewActive: Bool = false // Added state for navigation
     var discount = 0
     var deliveryCharges = 0
     
@@ -29,18 +30,23 @@ struct BagView: View {
     }
     
     fileprivate func CheckOutButton() -> some View {
-        Button(action: {
-            
+        return Button(action: {
+            // Navigate to checkout view
+            self.isCheckoutViewActive.toggle()
         }) {
             Text("CHECKOUT")
                 .font(.custom(Constants.AppFont.boldFont, size: 15))
                 .foregroundColor(.white)
                 .frame(height: 44)
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "cb2d3e"), Color.init(hex: "ef473a")]), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "6A1B9A"), Color.init(hex: "6A1B9A")]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(22)
         }
         .padding(.init(top: 0, leading: 15, bottom: 5, trailing: 15))
+        .sheet(isPresented: $isCheckoutViewActive) {
+            // Show checkout view
+            CheckoutView()
+        }
     }
     
     fileprivate func ApplyCoupon() -> some View {
@@ -71,6 +77,7 @@ struct BagView: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: 30)
         .sheet(isPresented: $isShowPromoCodeView) {
+            // Navigate to PromoCodeView
             PromoCodeView()
         }
     }
@@ -105,7 +112,7 @@ struct BagView: View {
                                     .font(.custom(Constants.AppFont.regularFont, size: 13))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                                 Spacer()
-                                Text("₹\(self.arrCloth.reduce(0, { $0 + $1.price }))")
+                                Text("Rs.\(self.arrCloth.reduce(0, { $0 + $1.price }))")
                                     .font(.custom(Constants.AppFont.boldFont, size: 13))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                             }
@@ -117,7 +124,7 @@ struct BagView: View {
                                     .font(.custom(Constants.AppFont.regularFont, size: 13))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                                 Spacer()
-                                Text("₹\(self.deliveryCharges)")
+                                Text("Rs.\(self.deliveryCharges)")
                                     .font(.custom(Constants.AppFont.boldFont, size: 13))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                             }
@@ -129,7 +136,7 @@ struct BagView: View {
                                     .font(.custom(Constants.AppFont.regularFont, size: 13))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                                 Spacer()
-                                Text("- ₹\(self.arrCloth.reduce(0, { $0 + ($1.price * $1.discount)/100}))")
+                                Text("- Rs\(self.arrCloth.reduce(0, { $0 + ($1.price * $1.discount)/100 }))")
                                     .font(.custom(Constants.AppFont.boldFont, size: 13))
                                     .foregroundColor(Color.init(hex: "036440"))
                             }
@@ -144,7 +151,7 @@ struct BagView: View {
                                     .font(.custom(Constants.AppFont.boldFont, size: 16))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                                 Spacer()
-                                Text("₹\(self.arrCloth.reduce(0, { $0 + ($1.price - ($1.price * $1.discount)/100)}))")
+                                Text("Rs.\(self.arrCloth.reduce(0, { $0 + ($1.price - ($1.price * $1.discount)/100) }))")
                                     .font(.custom(Constants.AppFont.boldFont, size: 16))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
                             }
@@ -250,7 +257,7 @@ struct ItemCellTypeThree: View {
                         .cornerRadius(5)
                         .padding(.bottom, 10)
                         Spacer()
-                        Text("₹\(cloth.price - (cloth.price * cloth.discount)/100)")
+                        Text("Rs. \(cloth.price - (cloth.price * cloth.discount)/100)")
                             .font(.custom(Constants.AppFont.semiBoldFont, size: 14))
                             .foregroundColor(Constants.AppColor.primaryBlack)
                     }
@@ -262,5 +269,17 @@ struct ItemCellTypeThree: View {
             .frame(height: 130)
             .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
+    }
+}
+
+//struct PromoCodeView: View {
+//    var body: some View {
+//        Text("PromoCodeView")
+//    }
+//}
+
+struct CheckoutView: View {
+    var body: some View {
+        CheckOutView()
     }
 }

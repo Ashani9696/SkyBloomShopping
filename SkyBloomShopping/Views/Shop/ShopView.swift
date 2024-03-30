@@ -48,7 +48,7 @@ struct ShopView: View {
                             }
                         }
                         .frame(height: 30)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "cb2d3e"), Color.init(hex: "ef473a")]), startPoint: .leading, endPoint: .trailing))
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "6A1B9A"), Color.init(hex: "6A1B9A")]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
                         .font(.footnote)
                         .cornerRadius(15)
@@ -192,7 +192,7 @@ struct ItemCellTypeTwo: View {
                     }
                     
                     HStack {
-                        Text("$\(cloth.price)")
+                        Text("Rs.\(cloth.price)")
                             .font(.headline)
                             .foregroundColor(Color.black)
                             .bold()

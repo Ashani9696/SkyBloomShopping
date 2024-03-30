@@ -52,6 +52,10 @@
 		24324A832BB29885006EAF01 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24324A7D2BB29885006EAF01 /* OpenSans-SemiBold.ttf */; };
 		24324A852BB2A019006EAF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24324A842BB2A019006EAF01 /* AppDelegate.swift */; };
 		24324A872BB2A0A1006EAF01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24324A862BB2A0A1006EAF01 /* SceneDelegate.swift */; };
+		24CCE9312BB8179600B61679 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CCE9302BB8179600B61679 /* Launch Screen.storyboard */; };
+		24CCE9332BB81DAD00B61679 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24CCE9322BB81DAD00B61679 /* GoogleService-Info.plist */; };
+		24CCE9362BB81EE600B61679 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 24CCE9352BB81EE600B61679 /* FirebaseFirestore */; };
+		24CCE9382BB81EF400B61679 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 24CCE9372BB81EF400B61679 /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,8 @@
 		24324A7D2BB29885006EAF01 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		24324A842BB2A019006EAF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24324A862BB2A0A1006EAF01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		24CCE9302BB8179600B61679 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		24CCE9322BB81DAD00B61679 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				24163AA22BB3267000201F85 /* PartialSheet in Frameworks */,
+				24CCE9362BB81EE600B61679 /* FirebaseFirestore in Frameworks */,
+				24CCE9382BB81EF400B61679 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +166,7 @@
 		243249DF2BB27CDE006EAF01 = {
 			isa = PBXGroup;
 			children = (
+				24CCE9302BB8179600B61679 /* Launch Screen.storyboard */,
 				243249EA2BB27CDE006EAF01 /* SkyBloomShopping */,
 				243249FB2BB27CDF006EAF01 /* SkyBloomShoppingTests */,
 				24324A052BB27CDF006EAF01 /* SkyBloomShoppingUITests */,
@@ -179,6 +188,8 @@
 		243249EA2BB27CDE006EAF01 /* SkyBloomShopping */ = {
 			isa = PBXGroup;
 			children = (
+				24CCE9322BB81DAD00B61679 /* GoogleService-Info.plist */,
+				247CB8E22BB7EBBA00C49ED6 /* ViewModel */,
 				24163AA32BB32ED100201F85 /* Info.plist */,
 				24324A5A2BB2903A006EAF01 /* SupportingViews */,
 				24324A4F2BB28E99006EAF01 /* Extension */,
@@ -418,6 +429,13 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		247CB8E22BB7EBBA00C49ED6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -436,6 +454,8 @@
 			name = SkyBloomShopping;
 			packageProductDependencies = (
 				24163AA12BB3267000201F85 /* PartialSheet */,
+				24CCE9352BB81EE600B61679 /* FirebaseFirestore */,
+				24CCE9372BB81EF400B61679 /* FirebaseFirestoreSwift */,
 			);
 			productName = SkyBloomShopping;
 			productReference = 243249E82BB27CDE006EAF01 /* SkyBloomShopping.app */;
@@ -511,6 +531,7 @@
 			mainGroup = 243249DF2BB27CDE006EAF01;
 			packageReferences = (
 				243AAA7E2BB2E1C1002F3471 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				24CCE9342BB81E9600B61679 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 243249E92BB27CDE006EAF01 /* Products */;
 			projectDirPath = "";
@@ -530,6 +551,8 @@
 			files = (
 				243249F32BB27CDF006EAF01 /* Preview Assets.xcassets in Resources */,
 				243249F02BB27CDF006EAF01 /* Assets.xcassets in Resources */,
+				24CCE9332BB81DAD00B61679 /* GoogleService-Info.plist in Resources */,
+				24CCE9312BB8179600B61679 /* Launch Screen.storyboard in Resources */,
 				24324A832BB29885006EAF01 /* OpenSans-SemiBold.ttf in Resources */,
 				24324A7F2BB29885006EAF01 /* OpenSans-Bold.ttf in Resources */,
 				24324A812BB29885006EAF01 /* OpenSans-Light.ttf in Resources */,
@@ -761,8 +784,12 @@
 				INFOPLIST_FILE = SkyBloomShopping/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -789,8 +816,12 @@
 				INFOPLIST_FILE = SkyBloomShopping/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -926,6 +957,14 @@
 				version = 3.1.1;
 			};
 		};
+		24CCE9342BB81E9600B61679 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -933,6 +972,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 243AAA7E2BB2E1C1002F3471 /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
+		};
+		24CCE9352BB81EE600B61679 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24CCE9342BB81E9600B61679 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		24CCE9372BB81EF400B61679 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24CCE9342BB81E9600B61679 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

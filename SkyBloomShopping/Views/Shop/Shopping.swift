@@ -41,7 +41,7 @@ struct Shopping: View {
                 .padding(.vertical, 10)
                 
                 VStack {
-                    Text("SUMMER SALES")
+                    Text("New Year Sale")
                         .font(.custom(Constants.AppFont.boldFont, size: 20))
                         .foregroundColor(Color.white)
                         .tracking(7)

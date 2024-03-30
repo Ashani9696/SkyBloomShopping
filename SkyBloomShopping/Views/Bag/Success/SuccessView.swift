@@ -18,7 +18,7 @@ struct SuccessView: View {
             Text("Success!")
                 .font(.largeTitle)
                 .padding(.vertical, 10)
-            Text("Your order will be delivered soon. Thank you for choosing our app.")
+            Text("Your order will be delivered soon. Thank you for choosing our Service.")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 20)
         }

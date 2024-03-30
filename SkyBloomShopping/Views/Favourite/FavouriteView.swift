@@ -145,10 +145,10 @@ struct FavoriteRowNew: View {
                         .padding(.top, 1)
                     
                     HStack {
-                        Text("₹\(cloth.price - (cloth.price * cloth.discount)/100)")
+                        Text("Rs.\(cloth.price - (cloth.price * cloth.discount)/100)")
                             .font(.custom(Constants.AppFont.semiBoldFont, size: 13))
                             .foregroundColor(Constants.AppColor.primaryBlack)
-                        Text("₹\(cloth.price)")
+                        Text("Rs.\(cloth.price)")
                             .font(.custom(Constants.AppFont.regularFont, size: 11))
                             .foregroundColor(.gray) .strikethrough()
                         Text(cloth.type == "new" ? "" : "\(cloth.discount)% OFF")

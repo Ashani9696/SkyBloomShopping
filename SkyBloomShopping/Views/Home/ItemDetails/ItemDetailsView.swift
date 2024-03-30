@@ -4,10 +4,12 @@
 //
 //  Created by Ashani Dilanka on 2024-03-26.
 //
-
+import Firebase
 import SwiftUI
 
 struct ItemDetailsView: View {
+    
+    
     
     @State var index = 0
     @State private var isModalPresentedForColor: Bool = false
@@ -15,6 +17,7 @@ struct ItemDetailsView: View {
     @State private var color: String = ""
     @State private var size: String = ""
     @Binding var show : Bool
+    @State private var isCartViewPresented = false // Added state variable for BagView
     
     var arrImage = ["greenDressCover", "greenDressCover", "greenDressCover", "greenDressCover"]
     var arrSize = ["S", "M", "L", "XL"]
@@ -23,12 +26,9 @@ struct ItemDetailsView: View {
     let cloth: Cloth
     let arrCloth = Cloth.all()
     
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     fileprivate func NavigationBarView() -> some View {
         return HStack(alignment: .center) {
             Button(action: {
-//                self.presentationMode.wrappedValue.dismiss()
                 self.show.toggle()
             }) {
                 Image(systemName: "arrow.left")
@@ -57,10 +57,8 @@ struct ItemDetailsView: View {
             Image(systemName: self.cloth.isFavorite == true ? "heart.fill" : "heart")
                 .foregroundColor(self.cloth.isFavorite == true ? .red : Constants.AppColor.secondaryBlack)
                 .frame(width: 35, height: 35)
-            //.background(Color.white)
         }
         .cornerRadius(20)
-        //                .shadow(color: Constants.AppColor.shadowColor, radius: 2, x: 0.8, y: 0.8)
     }
     
     fileprivate func ImageSlider() -> some View {
@@ -72,7 +70,6 @@ struct ItemDetailsView: View {
             }
         }
         .aspectRatio(4/3, contentMode: .fit)
-//        .frame(width: UIScreen.main.bounds.width, height: 250)
     }
     
     fileprivate func SimilerProduct() -> some View {
@@ -107,8 +104,10 @@ struct ItemDetailsView: View {
     }
     
     fileprivate func AddToCartButton() -> some View {
-        Button(action: {
-            
+        return Button(action: {
+            adddProductToCart(clothName: "Dress", description: "Good", color: "Black", size: "30", price: 350.00)
+            // Set isCartViewPresented to true to navigate to BagView
+            self.isCartViewPresented = true
         }) {
             Text("")
                 .frame(height: 65)
@@ -123,6 +122,23 @@ struct ItemDetailsView: View {
                 .foregroundColor(.white)
                 .padding(.top, -10)
         )
+        // Navigate to BagView when isCartViewPresented is true
+        .sheet(isPresented: $isCartViewPresented) {
+            BagView()
+        }
+    }
+    func adddProductToCart(clothName: String, description: String, color: String, size: String, price: Double){
+        let db = Firestore.firestore()
+        
+        let ClothsRef = db.collection("Cloths")
+        
+        ClothsRef.addDocument(data: [
+            "clothName": clothName,
+            "description": description,
+            "color": color,
+            "size": size,
+            "price": price
+        ])
     }
     
     fileprivate func SelectSizeView() -> some View {
@@ -211,8 +227,6 @@ struct ItemDetailsView: View {
                                         .foregroundColor(.white)
                                         .padding(.trailing, 6)
                                 }.frame(height: 20)
-                                    //                                .overlay(RoundedRectangle(cornerRadius: 15)
-                                    //                                .stroke(Color.green, lineWidth: 0.5))
                                     .background(Color.green)
                                     .cornerRadius(10)
                             }
@@ -228,10 +242,10 @@ struct ItemDetailsView: View {
                                 .padding(.bottom, 5)
                             
                             HStack {
-                                Text("₹\(cloth.price - (cloth.price * cloth.discount)/100)")
+                                Text("Rs.\(cloth.price - (cloth.price * cloth.discount)/100)")
                                     .font(.custom(Constants.AppFont.boldFont, size: 14))
                                     .foregroundColor(Constants.AppColor.secondaryBlack)
-                                Text("₹\(cloth.price)")
+                                Text("Rs.\(cloth.price)")
                                     .font(.custom(Constants.AppFont.regularFont, size: 13))
                                     .foregroundColor(.gray) .strikethrough()
                                 Text(cloth.type == "new" ? "" : "\(cloth.discount)% OFF")

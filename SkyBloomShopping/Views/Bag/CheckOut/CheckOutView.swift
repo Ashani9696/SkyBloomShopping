@@ -9,20 +9,28 @@ import SwiftUI
 
 struct CheckOutView: View {
     
+    // State variable to control the presentation of SuccessView
+    @State private var isOrderSubmitted = false
+    
     fileprivate func SubmitButton() -> some View {
         Button(action: {
-            
+            // Set isOrderSubmitted to true to navigate to SuccessView
+            self.isOrderSubmitted = true
         }) {
             Text("Submit Order")
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .frame(height: 50)
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "cb2d3e"), Color.init(hex: "ef473a")]), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "6A1B9A"), Color.init(hex: "6A1B9A")]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(25)
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 10)
+        // Navigate to SuccessView when isOrderSubmitted is true
+        .sheet(isPresented: $isOrderSubmitted) {
+            SuccessView()
+        }
     }
     
     fileprivate func NavigationBarView() -> some View {
@@ -66,9 +74,9 @@ struct CheckOutView: View {
                                     .cornerRadius(5)
                                     .shadow(color: Color.init(hex: "dddddd"), radius: 2, x: 0.8, y: 0.8)
                                 VStack(alignment: .leading) {
-                                    Text("Ayush Gupta")
+                                    Text("Ashani Dilanka")
                                         .padding(.top, 15)
-                                    Text("Medini Partment, Maruthi Nagar, BTM Stage 1, Bnagalore KA")
+                                    Text("Dilanka, Matara, Akuressa")
                                         .padding(.top, 10)
                                         .padding(.bottom, 10)
                                         .lineLimit(nil)
@@ -106,7 +114,7 @@ struct CheckOutView: View {
                                 Text("Order:")
                                     .foregroundColor(.gray)
                                 Spacer()
-                                Text("$112")
+                                Text("Rs.2500.00")
                                     .bold()
                             }.padding(.top, 30)
                             
@@ -114,7 +122,7 @@ struct CheckOutView: View {
                                 Text("Delivery Charges:")
                                     .foregroundColor(.gray)
                                 Spacer()
-                                Text("$10")
+                                Text("Rs.500.00")
                                     .bold()
                             }.padding(.top, 15)
                             
@@ -122,7 +130,7 @@ struct CheckOutView: View {
                                 Text("Total:")
                                     .foregroundColor(.gray)
                                 Spacer()
-                                Text("$122")
+                                Text("Rs.3000")
                                     .bold()
                             }.padding(.top, 15)
                             Spacer()
